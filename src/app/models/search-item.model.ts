@@ -16,7 +16,7 @@ interface Snippet {
   tags: string[],
   categoryId: string,
   liveBroadcastContent: string,
-  localized: {title:string, description: string},
+  localized: { title:string, description: string },
   defaultAudioLanguage: string,
 }
 

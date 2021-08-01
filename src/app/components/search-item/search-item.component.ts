@@ -5,8 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss'],
 })
+
 export class SearchItemComponent implements OnInit {
-  constructor() { }
+  itemTitle = '';
+
+  imgSrc = '';
+
+  viewCount = '';
+
+  likeCount = '';
+
+  dislikeCount = '';
+
+  favoriteCount = '';
+
+  commentCount = '';
 
   ngOnInit(): void {
   }

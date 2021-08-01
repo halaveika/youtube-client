@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchItemComponent } from '../search-item/search-item.component';
 
 @Component({
   selector: 'app-search-results',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent implements OnInit {
-  constructor() { }
+  sortingOder = 0;
+
+  items:SearchItemComponent[] = [];
 
   ngOnInit(): void {
   }
