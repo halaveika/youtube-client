@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SearchResultItemComponent implements OnInit {
 
   constructor() { }
-
+  public viewsCount = '';
+  public likesCount = '';
+  public dislikesCount = '';
+  public commentsCount = '';
+  public videoTitle = '';
   ngOnInit(): void {
   }
 

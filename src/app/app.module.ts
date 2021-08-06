@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { FilterSortButtonsComponent } from './components/filter-sort-buttons/filter-sort-buttons.component';
+import { FilterSortInputComponent } from './components/filter-sort-input/filter-sort-input.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { HeaderLoginComponent } from './components/header-login/header-login.component';
 import { HeaderLogoComponent } from './components/header-logo/header-logo.component';
@@ -24,6 +26,8 @@ import { SharedModule } from './shared/shared.module';
     FilterComponent,
     SearchResultComponent,
     SearchResultItemComponent,
+    FilterSortButtonsComponent,
+    FilterSortInputComponent,
   ],
   imports: [
     BrowserModule,

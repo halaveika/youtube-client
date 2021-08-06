@@ -1,0 +1,39 @@
+:host {
+  width: auto;
+  height: auto;
+}
+
+.example-card {
+  width: 263px;
+  height: 327px;
+  padding: 20px;
+  background: #E5E5E5;
+  border-radius: 5px;
+  margin: 30px 15px 0 15px;
+}
+
+.stat-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mat-button{
+  position: relative;
+  width:120px;
+  height:32px;
+  background: #2F80ED;
+  border-radius: 5px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto !important;
+}
