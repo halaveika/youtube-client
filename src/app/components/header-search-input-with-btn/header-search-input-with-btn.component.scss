@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+}
+
+:host ::ng-deep .mat-form-field-flex{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:host ::ng-deep .mat-button-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .mat-form-field-infix{
+ width:auto;
+}
