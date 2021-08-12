@@ -12,11 +12,34 @@
   margin: 30px 15px 0 15px;
 }
 
+
+
 .stat-container{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.stat-item{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000000;
+}
+
+.stat-item img{
+  align-self: center;
+  margin-right: 5px;
+}
+
+.stat-item:last-child img{
+  position: relative;
+top: 20%;
 }
 
 .mat-button{
@@ -36,4 +59,26 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto !important;
+}
+
+.mat-card-header {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mat-card-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  color: #4F4F4F;
+  text-align: center;
+}
+
+.mat-card-actions {
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
 }

@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional, SkipSelf } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { SearchItem } from '../models/search-item.model';
 import { SearchResponse } from '../models/search-response.model';
 import MockResponse from '../shared/mockData/mockYoutubeResponse.json';
 
@@ -6,13 +8,23 @@ import MockResponse from '../shared/mockData/mockYoutubeResponse.json';
   providedIn: 'root',
 })
 export class GetResponseService {
-  public searchPattern ='';
-  public response: SearchResponse | null  = null;
-  getResponse(pattern:string): SearchResponse {
+  private searchPattern ='';
+  private response: SearchResponse | null  = null;
+  private searchItemsData = new BehaviorSubject<SearchItem[]>([]);
+  public searchItemsData$: Observable<SearchItem[]>;
+constructor(@Optional() @SkipSelf() parent?: GetResponseService) {
+  this.searchItemsData$ = this.searchItemsData.asObservable()
+  if (parent) {
+    throw Error(
+      `[GetResponseService]: trying to create multiple instances,
+      but this service should be a singleton.`
+    );
+  }
+}
+  getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
-    return  this.getMockResponse();
+    this.response = MockResponse;
+    this.searchItemsData.next(this.response.items);
+    return  this.searchItemsData;
   };
-  getMockResponse(): SearchResponse
-  { this.response = MockResponse;
-    return  this.response }
 }

@@ -1,28 +1,27 @@
 <mat-card class="example-card">
-  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"
-    style="width:223px;height:123px;">
+  <img [src]="srcImg" alt="Photo of a Shiba Inu" style="width:223px;height: 167px;">
   <div class="stat-container">
-    <div>
+    <div class="stat-item">
       <img src="../../../assets/viewed.png">
-      {{viewsCount}}
+      {{viewCount}}
     </div>
-    <div>
+    <div class="stat-item">
       <img src="../../../assets/liked.png">
-      {{likesCount}}
+      {{likeCount}}
     </div>
-    <div>
+    <div class="stat-item">
       <img src="../../../assets/dislike.png">
-      {{dislikesCount}}
+      {{dislikeCount}}
     </div>
-    <div>
+    <div class="stat-item">
       <img src="../../../assets/Group 9.png">
-      {{commentsCount}}
+      {{commentCount}}
     </div>
   </div>
   <mat-card-header>
-    <mat-card-title>{{videoTitle}}</mat-card-title>
+    <mat-card-title>{{title}}</mat-card-title>
   </mat-card-header>
   <mat-card-actions>
-    <button mat-button >more...</button>
+    <button mat-button>more...</button>
   </mat-card-actions>
 </mat-card>

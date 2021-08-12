@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search-result-item',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-result-item.component.scss']
 })
 export class SearchResultItemComponent implements OnInit {
-
   constructor() { }
-  public viewsCount = '';
-  public likesCount = '';
-  public dislikesCount = '';
-  public commentsCount = '';
-  public videoTitle = '';
+  @Input() public viewCount = '';
+  @Input() public likeCount = '';
+  @Input() public dislikeCount = '';
+  @Input() public commentCount = '';
+  @Input() public title = '';
+  @Input() public srcImg = '';
   ngOnInit(): void {
   }
 
