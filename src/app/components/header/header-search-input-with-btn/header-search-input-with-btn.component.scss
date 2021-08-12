@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  align-items: center;
+  background: transparent;
+  border: none;
+}
+
+ :host ::ng-deep .mat-form-field-flex{
+  background: transparent;
+  border: none;
+ }
+
+:host ::ng-deep .mat-form-field-underline{
+  display: none;
+
+}
+
+
+
+// :host ::ng-deep .mat-form-field-infix{
+//  width:auto;
+//  padding: 0;
+// }
+
+#mat-input-0{
+  width:396px;
+  height:24px;
+  background-color:#EFEFEF;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #929292;
+}

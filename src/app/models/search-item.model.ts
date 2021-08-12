@@ -3,11 +3,11 @@ export interface SearchItem {
   etag: string,
   id: string,
   snippet: Snippet,
-  statistic: Statistic,
+  statistics: Statistic,
 }
 
 interface Snippet {
-  publishedAt: Date | string,
+  publishedAt: string,
   channelId: string,
   title: string,
   description: string,
