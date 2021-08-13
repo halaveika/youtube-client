@@ -17,14 +17,12 @@
 
 }
 
+:host ::ng-deep .mat-form-field-infix{
+ width:auto;
+ padding: 0;
+}
 
-
-// :host ::ng-deep .mat-form-field-infix{
-//  width:auto;
-//  padding: 0;
-// }
-
-#mat-input-0{
+.mat-input-element{
   width:396px;
   height:24px;
   background-color:#EFEFEF;
