@@ -10,5 +10,19 @@ export class AppComponent {
   toggleFilter(toggleFlag: boolean) {
     this.toggleFilterFlag = toggleFlag;
   }
+  public sendSortDataValue = '';
+  public sendSortCountValue = '';
+  public sendFilterPattern= '';
+  catchSortDataValue(value: string) {
+    this.sendSortDataValue = value;
+  }
+  catchSortCountValue(value: string) {
+    this.sendSortCountValue = value;
+  }
+  catchFilterPattern(value: string) {
+    this.sendFilterPattern = value;
+  }
+
+
   title = 'youtube-client';
 }

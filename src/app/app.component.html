@@ -1,4 +1,6 @@
 <app-header (toggleFilterFlag)="toggleFilter($event)">
 </app-header>
-<app-filter *ngIf="toggleFilterFlag"></app-filter>
-<app-search-result></app-search-result>
+<app-filter *ngIf="toggleFilterFlag" (sendSortDataValue)="catchSortDataValue($event)"
+  (sendSortCountValue)="catchSortCountValue($event)" (sendFilterPattern)="catchFilterPattern($event)"></app-filter>
+<app-search-result [sortDataValue]="sendSortDataValue" [sortCountValue]="sendSortCountValue"
+  [filterPattern]="sendFilterPattern"></app-search-result>

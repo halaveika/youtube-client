@@ -15,6 +15,9 @@ import { SearchResultItemComponent } from './components/search-result/search-res
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { GetResponseService } from './services/get-response-service.service';
 import { SharedModule } from './shared/shared.module';
+import { DataSortPipe } from './pipes/data-sort.pipe';
+import { CountSortPipe } from './pipes/count-sort.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { SharedModule } from './shared/shared.module';
     SearchResultItemComponent,
     FilterSortButtonsComponent,
     FilterSortInputComponent,
+    DataSortPipe,
+    CountSortPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

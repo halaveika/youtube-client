@@ -23,7 +23,7 @@ constructor(@Optional() @SkipSelf() parent?: GetResponseService) {
 }
   getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
-    if (!pattern) {this.response = null;
+    if (!pattern.trim()) {this.response = null;
       this.searchItemsData.next([]);
       return this.searchItemsData }
     this.response = MockResponse;
