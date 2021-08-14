@@ -18,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
 import { DataSortPipe } from './pipes/data-sort.pipe';
 import { CountSortPipe } from './pipes/count-sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { StyleItemDateDirective } from './directives/style-item-date.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     DataSortPipe,
     CountSortPipe,
     FilterPipe,
+    StyleItemDateDirective,
   ],
   imports: [
     BrowserModule,

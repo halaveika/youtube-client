@@ -9,9 +9,9 @@ import { SearchItem } from '../../models/search-item.model';
 })
 export class SearchResultComponent{
   public searchItemsArr:SearchItem[] = [];
-  @Input() sortDataValue = '';
-  @Input() sortCountValue = '';
-  @Input() filterPattern = '';
+  @Input() public sortDataValue = '';
+  @Input() public sortCountValue = '';
+  @Input() public filterPattern = '';
   constructor(private getResponseService: GetResponseService) {
     this.getResponseService.searchItemsData$.subscribe( items => this.searchItemsArr = items);
     console.log(this.filterPattern);
