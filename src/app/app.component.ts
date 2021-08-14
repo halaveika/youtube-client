@@ -7,22 +7,28 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public toggleFilterFlag = false;
+
   toggleFilter(toggleFlag: boolean) {
     this.toggleFilterFlag = toggleFlag;
   }
+
   public sendSortDataValue = '';
+
   public sendSortCountValue = '';
-  public sendFilterPattern= '';
+
+  public sendFilterPattern = '';
+
   catchSortDataValue(value: string) {
     this.sendSortDataValue = value;
   }
+
   catchSortCountValue(value: string) {
     this.sendSortCountValue = value;
   }
+
   catchFilterPattern(value: string) {
     this.sendFilterPattern = value;
   }
-
 
   title = 'youtube-client';
 }

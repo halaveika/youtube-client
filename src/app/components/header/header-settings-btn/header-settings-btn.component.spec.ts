@@ -8,9 +8,9 @@ describe('HeaderSettingsBtnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderSettingsBtnComponent ]
+      declarations: [HeaderSettingsBtnComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { GetResponseService } from './get-response-service.service';
 
-
 describe('GetResponseServiceService', () => {
   let service: GetResponseService;
 

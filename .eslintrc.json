@@ -22,6 +22,7 @@
       "rules": {
         "max-len": ["error", { "code": 120 }],
         "import/prefer-default-export":"off",
+        "no-nested-ternary":"off",
         "class-methods-use-this": "off",
         "@angular-eslint/no-empty-lifecycle-method": "off",
         "@angular-eslint/directive-selector": [

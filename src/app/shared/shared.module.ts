@@ -6,11 +6,11 @@ import { MaterialModule } from './material/material.module';
   declarations: [],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
     CommonModule,
-    MaterialModule
-  ]
+    MaterialModule,
+  ],
 })
 export class SharedModule { }

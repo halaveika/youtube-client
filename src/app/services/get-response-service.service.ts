@@ -8,26 +8,33 @@ import MockResponse from '../shared/mockData/mockYoutubeResponse.json';
   providedIn: 'root',
 })
 export class GetResponseService {
-  private searchPattern ='';
-  private response: SearchResponse | null  = null;
+  private searchPattern = '';
+
+  private response: SearchResponse | null = null;
+
   private searchItemsData = new BehaviorSubject<SearchItem[]>([]);
+
   public searchItemsData$: Observable<SearchItem[]>;
-constructor(@Optional() @SkipSelf() parent?: GetResponseService) {
-  this.searchItemsData$ = this.searchItemsData.asObservable()
-  if (parent) {
-    throw Error(
-      `[GetResponseService]: trying to create multiple instances,
-      but this service should be a singleton.`
-    );
+
+  constructor(@Optional() @SkipSelf() parent?: GetResponseService) {
+    this.searchItemsData$ = this.searchItemsData.asObservable();
+    if (parent) {
+      throw Error(
+        `[GetResponseService]: trying to create multiple instances,
+      but this service should be a singleton.`,
+      );
+    }
   }
-}
+
   getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
-    if (!pattern.trim()) {this.response = null;
+    if (!pattern.trim()) {
+      this.response = null;
       this.searchItemsData.next([]);
-      return this.searchItemsData }
+      return this.searchItemsData;
+    }
     this.response = MockResponse;
     this.searchItemsData.next(this.response.items);
-    return  this.searchItemsData;
-  };
+    return this.searchItemsData;
+  }
 }

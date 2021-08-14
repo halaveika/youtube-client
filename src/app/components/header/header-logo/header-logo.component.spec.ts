@@ -8,9 +8,9 @@ describe('HeaderLogoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderLogoComponent ]
+      declarations: [HeaderLogoComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -8,9 +8,9 @@ describe('FilterSortInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FilterSortInputComponent ]
+      declarations: [FilterSortInputComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

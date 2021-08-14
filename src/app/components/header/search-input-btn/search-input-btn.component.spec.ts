@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderSearchInputWithBtnComponent } from './header-search-input-with-btn.component';
+import { HeaderSearchInputWithBtnComponent } from './search-input-btn.component';
 
 describe('HeaderSearchInputWithBtnComponent', () => {
   let component: HeaderSearchInputWithBtnComponent;
@@ -8,9 +8,9 @@ describe('HeaderSearchInputWithBtnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderSearchInputWithBtnComponent ]
+      declarations: [HeaderSearchInputWithBtnComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderLoginComponent implements OnInit {
   public userTitle = 'Your Name';
+
   ngOnInit(): void {
   }
 }

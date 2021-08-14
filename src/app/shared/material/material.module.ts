@@ -10,13 +10,13 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
   ],
   exports: [
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatCardModule
-  ]
+    MatCardModule,
+  ],
 })
 export class MaterialModule { }

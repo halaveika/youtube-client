@@ -5,19 +5,18 @@ import { SearchItem } from '../../models/search-item.model';
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
-  styleUrls: ['./search-result.component.scss']
+  styleUrls: ['./search-result.component.scss'],
 })
-export class SearchResultComponent{
+export class SearchResultComponent {
   public searchItemsArr:SearchItem[] = [];
+
   @Input() public sortDataValue = '';
+
   @Input() public sortCountValue = '';
+
   @Input() public filterPattern = '';
+
   constructor(private getResponseService: GetResponseService) {
-    this.getResponseService.searchItemsData$.subscribe( items => this.searchItemsArr = items);
-    console.log(this.filterPattern);
+    this.getResponseService.searchItemsData$.subscribe((items) => { this.searchItemsArr = items; return true; });
   }
-
-
-
-
 }

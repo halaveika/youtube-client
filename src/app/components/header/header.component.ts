@@ -7,6 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() toggleFilterFlag = new EventEmitter<boolean>();
+
   toggleFilter(toggleFlag: boolean) {
     this.toggleFilterFlag.emit(toggleFlag);
   }
