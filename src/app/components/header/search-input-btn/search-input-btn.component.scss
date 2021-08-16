@@ -22,6 +22,17 @@
  padding: 0;
 }
 
+:host button {
+  width:80px;
+  height:24px;
+  background:#2F80ED;
+  color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
 .mat-input-element{
   width:396px;
   height:24px;

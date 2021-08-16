@@ -24,6 +24,7 @@
         "import/prefer-default-export":"off",
         "no-nested-ternary":"off",
         "class-methods-use-this": "off",
+        "no-else-return": "off",
         "@angular-eslint/no-empty-lifecycle-method": "off",
         "@angular-eslint/directive-selector": [
           "error",
