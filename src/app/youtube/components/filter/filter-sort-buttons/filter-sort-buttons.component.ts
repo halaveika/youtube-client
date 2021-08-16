@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ASC, DESC } from '../../../shared/constans';
+import { ASC, DESC } from '../../../../shared/constans';
 
 @Component({
   selector: 'app-filter-sort-buttons',

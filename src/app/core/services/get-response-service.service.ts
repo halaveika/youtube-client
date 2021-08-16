@@ -2,7 +2,7 @@ import { Injectable, Optional, SkipSelf } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SearchItem } from '../models/search-item.model';
 import { SearchResponse } from '../models/search-response.model';
-import MockResponse from '../shared/mockData/mockYoutubeResponse.json';
+import MockResponse from '../../shared/mockData/mockYoutubeResponse.json';
 
 @Injectable({
   providedIn: 'root',
