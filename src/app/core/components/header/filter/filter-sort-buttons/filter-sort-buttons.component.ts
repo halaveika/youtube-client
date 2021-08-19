@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ASC, DESC } from '../../../../shared/constans';
+import { Component } from '@angular/core';
+import { FilterService } from '@core/services/filter.service';
+import { ASC, DESC } from '@shared/constans';
 
 @Component({
   selector: 'app-filter-sort-buttons',
@@ -11,17 +12,17 @@ export class FilterSortButtonsComponent {
 
   public sortCountValue = '';
 
-  @Output() sendSortDataValue = new EventEmitter<string>();
+  constructor(private filterService: FilterService) {
 
-  @Output() sendSortCountValue = new EventEmitter<string>();
+  }
 
   public sortData(): void {
     if (this.sortDataValue !== ASC) { this.sortDataValue = ASC; } else { this.sortDataValue = DESC; }
-    this.sendSortDataValue.emit(this.sortDataValue);
+    this.filterService.setDataValue(this.sortDataValue);
   }
 
   public sortCount(): void {
     if (this.sortCountValue !== ASC) { this.sortCountValue = ASC; } else { this.sortCountValue = DESC; }
-    this.sendSortCountValue.emit(this.sortCountValue);
+    this.filterService.setCountValue(this.sortCountValue);
   }
 }

@@ -1,12 +1,10 @@
 import { Injectable, Optional, SkipSelf } from '@angular/core';
+import MockResponse from '@shared/mockData/mockYoutubeResponse.json';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SearchItem } from '../models/search-item.model';
 import { SearchResponse } from '../models/search-response.model';
-import MockResponse from '../../shared/mockData/mockYoutubeResponse.json';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class GetResponseService {
   private searchPattern = '';
 
@@ -28,6 +26,7 @@ export class GetResponseService {
 
   getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
+    console.dir(this.searchPattern);
     if (!pattern.trim()) {
       this.response = null;
       this.searchItemsData.next([]);
@@ -35,6 +34,7 @@ export class GetResponseService {
     }
     this.response = MockResponse;
     this.searchItemsData.next(this.response.items);
+    console.dir(this.response.items);
     return this.searchItemsData;
   }
 }

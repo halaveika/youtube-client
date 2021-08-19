@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchItem } from '../../core/models/search-item.model';
-import { ASC, DESC } from '../../shared/constans';
+import { SearchItem } from '@core/models/search-item.model';
+import { ASC, DESC } from '@shared/constans';
 
 @Pipe({
   name: 'dataSort',

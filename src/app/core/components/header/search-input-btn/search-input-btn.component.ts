@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetResponseService } from 'src/app/core/services/get-response-service.service';
+import { GetResponseService } from '@core/services/get-response-service.service';
 
 @Component({
   selector: 'app-search-input-btn',

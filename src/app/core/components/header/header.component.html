@@ -4,3 +4,4 @@
   <app-header-settings-btn (toggleFilterFlag)="toggleFilter($event)"></app-header-settings-btn>
   <app-header-login></app-header-login>
 </div>
+<app-filter *ngIf="toggleFilterFlag"></app-filter>

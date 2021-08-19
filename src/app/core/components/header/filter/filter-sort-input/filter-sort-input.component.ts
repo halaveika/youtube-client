@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { FilterService } from '@core/services/filter.service';
 
 @Component({
   selector: 'app-filter-sort-input',
@@ -8,13 +9,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class FilterSortInputComponent {
   public filterPattern = '';
 
-  @Output() sendFilterPattern = new EventEmitter<string>();
+  constructor(private filterService: FilterService) {
+
+  }
 
   public onInput(event: Event) {
     this.filterPattern = (event.target as HTMLInputElement).value;
   }
 
   public onModelChange() {
-    this.sendFilterPattern.emit(this.filterPattern);
+    this.filterService.setFilterPattern(this.filterPattern);
   }
 }

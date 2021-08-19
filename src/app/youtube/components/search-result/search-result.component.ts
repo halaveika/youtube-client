@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { GetResponseService } from 'src/app/core/services/get-response-service.service';
-import { SearchItem } from '../../../core/models/search-item.model';
+import { Component } from '@angular/core';
+import { SearchItem } from '@core/models/search-item.model';
+import { FilterService } from '@core/services/filter.service';
+import { GetResponseService } from '@core/services/get-response-service.service';
 
 @Component({
   selector: 'app-search-result',
@@ -10,13 +11,16 @@ import { SearchItem } from '../../../core/models/search-item.model';
 export class SearchResultComponent {
   public searchItemsArr:SearchItem[] = [];
 
-  @Input() public sortDataValue = '';
+  public sortDataValue = '';
 
-  @Input() public sortCountValue = '';
+  public sortCountValue = '';
 
-  @Input() public filterPattern = '';
+  public filterPattern = '';
 
-  constructor(private getResponseService: GetResponseService) {
+  constructor(private getResponseService: GetResponseService, private  filterService:FilterService ) {
     this.getResponseService.searchItemsData$.subscribe((items) => { this.searchItemsArr = items; return true; });
+    this.filterService.sortDataValue$.subscribe((value) => { this.sortDataValue = value; return true; });
+    this.filterService.sortCountValue$.subscribe((value) => { this.sortCountValue = value; return true; });
+    this.filterService.filterPattern$.subscribe((value) => { this.filterPattern = value; return true; });
   }
 }
