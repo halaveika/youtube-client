@@ -4,8 +4,9 @@ import { Page404Component } from '@core/pages/page404/page404.component';
 
 
 const routes: Routes = [
-   { path: 'main', loadChildren: ()=> import('@youtube/youtube.module').then(m => m.YoutubeModule)},
-   { path: '**', component: Page404Component}
+  { path: 'login', loadChildren: ()=> import('@auth/auth.module').then(m => m.AuthModule)},
+  { path: 'main', loadChildren: ()=> import('@youtube/youtube.module').then(m => m.YoutubeModule)},
+  { path: '**', component: Page404Component}
 ];
 
 @NgModule({

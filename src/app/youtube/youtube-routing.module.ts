@@ -5,7 +5,7 @@ import { MainComponent } from '@youtube/pages/main/main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent},
-  { path: 'information/:id', component: DetailedComponent}
+  { path: 'video/:id', component: DetailedComponent}
 ];
 
 @NgModule({

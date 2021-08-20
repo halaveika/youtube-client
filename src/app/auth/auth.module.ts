@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthRoutingModule } from '@auth/auth-routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginPageComponent
+  ],
   imports: [
-    CommonModule
+    SharedModule,
+    AuthRoutingModule
   ]
 })
 export class AuthModule { }

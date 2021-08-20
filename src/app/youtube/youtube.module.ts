@@ -20,8 +20,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     FilterPipe,
     MainComponent,
     DetailedComponent],
-  exports: [ MainComponent
-  ],
+  exports: [],
   imports: [
     SharedModule,
     YoutubeRoutingModule

@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { LoginService } from '@core/services/login.service';
 import { SharedModule } from '@shared/shared.module';
 import { FilterSortButtonsComponent } from './components/header/filter/filter-sort-buttons/filter-sort-buttons.component';
 import { FilterSortInputComponent } from './components/header/filter/filter-sort-input/filter-sort-input.component';
@@ -34,7 +35,8 @@ import { YoutubeService } from './services/youtube.service';
   ],
   providers: [
     YoutubeService,
-    FilterService
+    FilterService,
+    LoginService
   ]
 })
 export class CoreModule { }
