@@ -17,7 +17,7 @@ export class SearchResultComponent {
 
   public filterPattern = '';
 
-  constructor(private youtubeService: YoutubeService, private  filterService:FilterService ) {
+  constructor(private youtubeService: YoutubeService, private filterService:FilterService) {
     this.youtubeService.searchItemsData$.subscribe((items) => { this.searchItemsArr = items; return true; });
     this.filterService.sortDataValue$.subscribe((value) => { this.sortDataValue = value; return true; });
     this.filterService.sortCountValue$.subscribe((value) => { this.sortCountValue = value; return true; });

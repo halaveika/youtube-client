@@ -14,6 +14,7 @@ export class FilterService {
   public sortCountValue$: Observable<string>;
 
   public filterPattern$: Observable<string>;
+
   constructor(@Optional() @SkipSelf() parent?: FilterService) {
     this.sortDataValue$ = this.sortDataValue.asObservable();
     this.sortCountValue$ = this.sortCountValue.asObservable();
@@ -37,5 +38,4 @@ export class FilterService {
   setFilterPattern(value:string):void {
     this.filterPattern.next(value);
   }
-
 }

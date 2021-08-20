@@ -23,8 +23,8 @@ import { FilterPipe } from './pipes/filter.pipe';
   exports: [],
   imports: [
     SharedModule,
-    YoutubeRoutingModule
+    YoutubeRoutingModule,
   ],
-  providers: []
+  providers: [],
 })
 export class YoutubeModule { }

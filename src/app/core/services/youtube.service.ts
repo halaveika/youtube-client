@@ -37,6 +37,6 @@ export class YoutubeService {
   }
 
   getCurrentItem(id:string) {
-    return this.response!.items.find(item => item.id === id);
+    return this.response!.items.find((item) => item.id === id);
   }
 }

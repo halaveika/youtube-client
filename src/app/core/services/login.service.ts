@@ -5,36 +5,36 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class LoginService {
-  private _loginValue = '';
-  private _passwordValue = '';
-  private _isLogin = new BehaviorSubject(false);;
+  private loginValue = '';
+
+  private passwordValue = '';
+
+  private isLogin = new BehaviorSubject(false);
+
   public isLogin$: Observable<boolean>;
+
   constructor(private router: Router) {
-    this.isLogin$ = this._isLogin.asObservable();
+    this.isLogin$ = this.isLogin.asObservable();
+  }
 
-   }
-
-  login (login: string, password:string ) {
-    this._loginValue = login;
-    this._passwordValue = password;
-
-    this._isLogin.next(true);
+  login(login: string, password:string) {
+    this.loginValue = login;
+    this.passwordValue = password;
+    this.isLogin.next(true);
     localStorage.setItem(TOKEN, this.generateFakeToken());
     this.router.navigate(['main']);
   }
 
-  logout () {
-    this._loginValue = '';
-    this._passwordValue = '';
-    this._isLogin.next(false);
+  logout() {
+    this.loginValue = '';
+    this.passwordValue = '';
+    this.isLogin.next(false);
     localStorage.removeItem(TOKEN);
     this.router.navigate(['login']);
   }
 
-  generateFakeToken () {
-    const rand = () => {return Math.random().toString(36).substr(2);};
+  generateFakeToken() {
+    const rand = () => Math.random().toString(36).substr(2);
     return rand() + rand();
   }
-
-
 }

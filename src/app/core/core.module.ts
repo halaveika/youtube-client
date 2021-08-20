@@ -1,8 +1,10 @@
-
 import { NgModule } from '@angular/core';
+import { AuthGuard } from '@core/auth-guard';
 import { LoginService } from '@core/services/login.service';
 import { SharedModule } from '@shared/shared.module';
-import { FilterSortButtonsComponent } from './components/header/filter/filter-sort-buttons/filter-sort-buttons.component';
+import {
+  FilterSortButtonsComponent,
+} from './components/header/filter/filter-sort-buttons/filter-sort-buttons.component';
 import { FilterSortInputComponent } from './components/header/filter/filter-sort-input/filter-sort-input.component';
 import { FilterComponent } from './components/header/filter/filter.component';
 import { HeaderLoginComponent } from './components/header/header-login/header-login.component';
@@ -27,16 +29,17 @@ import { YoutubeService } from './services/youtube.service';
     Page404Component,
   ],
   imports: [
-    SharedModule
+    SharedModule,
   ],
   exports: [
     HeaderComponent,
-    Page404Component
+    Page404Component,
   ],
   providers: [
     YoutubeService,
     FilterService,
-    LoginService
-  ]
+    LoginService,
+    AuthGuard,
+  ],
 })
 export class CoreModule { }
