@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetResponseService } from '@core/services/get-response-service.service';
+import { YoutubeService } from '@app/core/services/youtube.service';
 
 @Component({
   selector: 'app-search-input-btn',
@@ -9,7 +9,7 @@ import { GetResponseService } from '@core/services/get-response-service.service'
 export class SearchInputBtnComponent {
   public searchPattern = '';
 
-  constructor(private getResponseService: GetResponseService) {
+  constructor(private youtubeService: YoutubeService) {
 
   }
 
@@ -18,6 +18,6 @@ export class SearchInputBtnComponent {
   }
 
   public onSearch() {
-    this.getResponseService.getResponse(this.searchPattern);
+    this.youtubeService.getResponse(this.searchPattern);
   }
 }

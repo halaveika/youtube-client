@@ -9,8 +9,9 @@ import { HeaderLogoComponent } from './components/header/header-logo/header-logo
 import { HeaderSettingsBtnComponent } from './components/header/header-settings-btn/header-settings-btn.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchInputBtnComponent } from './components/header/search-input-btn/search-input-btn.component';
+import { Page404Component } from './pages/page404/page404.component';
 import { FilterService } from './services/filter.service';
-import { GetResponseService } from './services/get-response-service.service';
+import { YoutubeService } from './services/youtube.service';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,17 @@ import { GetResponseService } from './services/get-response-service.service';
     FilterComponent,
     FilterSortButtonsComponent,
     FilterSortInputComponent,
+    Page404Component,
   ],
   imports: [
     SharedModule
   ],
   exports: [
-    HeaderComponent],
+    HeaderComponent,
+    Page404Component
+  ],
   providers: [
-    GetResponseService,
+    YoutubeService,
     FilterService
   ]
 })

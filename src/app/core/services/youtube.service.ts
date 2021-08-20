@@ -5,7 +5,7 @@ import { SearchItem } from '../models/search-item.model';
 import { SearchResponse } from '../models/search-response.model';
 
 @Injectable()
-export class GetResponseService {
+export class YoutubeService {
   private searchPattern = '';
 
   private response: SearchResponse | null = null;
@@ -14,7 +14,7 @@ export class GetResponseService {
 
   public searchItemsData$: Observable<SearchItem[]>;
 
-  constructor(@Optional() @SkipSelf() parent?: GetResponseService) {
+  constructor(@Optional() @SkipSelf() parent?: YoutubeService) {
     this.searchItemsData$ = this.searchItemsData.asObservable();
     if (parent) {
       throw Error(
@@ -26,7 +26,6 @@ export class GetResponseService {
 
   getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
-    console.dir(this.searchPattern);
     if (!pattern.trim()) {
       this.response = null;
       this.searchItemsData.next([]);
@@ -34,7 +33,10 @@ export class GetResponseService {
     }
     this.response = MockResponse;
     this.searchItemsData.next(this.response.items);
-    console.dir(this.response.items);
     return this.searchItemsData;
+  }
+
+  getCurrentItem(id:string) {
+    return this.response!.items.find(item => item.id === id);
   }
 }

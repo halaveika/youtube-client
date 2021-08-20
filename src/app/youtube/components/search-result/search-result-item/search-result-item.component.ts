@@ -17,4 +17,6 @@ export class SearchResultItemComponent {
   @Input() public title = '';
 
   @Input() public srcImg = '';
+
+  @Input() public id = '';
 }
