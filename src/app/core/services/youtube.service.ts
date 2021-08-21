@@ -26,7 +26,8 @@ export class YoutubeService {
 
   getResponse(pattern:string): BehaviorSubject<SearchItem[]> {
     this.searchPattern = pattern;
-    if (!pattern.trim()) {
+    console.log(this.searchPattern);
+    if (!pattern) {
       this.response = null;
       this.searchItemsData.next([]);
       return this.searchItemsData;

@@ -1,4 +1,3 @@
 <mat-form-field appearance="fill">
-  <input matInput [(ngModel)]="searchPattern">
+  <input matInput [formControl]="textControl">
 </mat-form-field>
-<button mat-button (click)="onSearch()">Search</button>
