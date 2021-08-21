@@ -25,7 +25,8 @@ export class StyleItemDateDirective implements OnInit {
       return 'solid green 5px';
     } else if (difDate >= 180) {
       return 'solid red 5px';
+    } else {
+      return '';
     }
-    return '';
   }
 }

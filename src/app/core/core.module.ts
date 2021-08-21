@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AuthGuard } from '@core/auth-guard';
 import { LoginService } from '@core/services/login.service';
 import { SharedModule } from '@shared/shared.module';
@@ -40,6 +40,12 @@ import { YoutubeService } from './services/youtube.service';
     FilterService,
     LoginService,
     AuthGuard,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (loginService: LoginService) => () => loginService.removeToken(),
+      deps: [LoginService],
+      multi: true,
+    },
   ],
 })
 export class CoreModule { }

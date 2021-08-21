@@ -37,4 +37,8 @@ export class LoginService {
     const rand = () => Math.random().toString(36).substr(2);
     return rand() + rand();
   }
+
+  removeToken() {
+    localStorage.removeItem(TOKEN);
+  }
 }

@@ -2,11 +2,11 @@
   <h1>Login</h1>
   <mat-form-field appearance="legacy">
     <mat-label>login</mat-label>
-    <input matInput placeholder="Placeholder" [(ngModel)]="loginValue">
+    <input matInput [(ngModel)]="loginValue">
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>password</mat-label>
-    <input matInput placeholder="Placeholder" [(ngModel)]="passwordValue">
+    <input matInput [(ngModel)]="passwordValue">
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="login()">Login</button>
 </div>
