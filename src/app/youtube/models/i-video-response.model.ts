@@ -1,10 +1,10 @@
-import { SearchItem } from './search-item.model';
+import { ISearchItem } from './i-search-item.model';
 
-export interface SearchResponse {
+export interface IVideoResponse {
   kind: string,
   etag: string,
   pageInfo: PageInfo,
-  items: SearchItem[],
+  items: ISearchItem[],
 }
 
 interface PageInfo {

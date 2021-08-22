@@ -3,7 +3,7 @@ import { AuthGuard } from '@core/auth-guard';
 import { LoginService } from '@core/services/login.service';
 import { SharedModule } from '@shared/shared.module';
 import {
-  FilterSortButtonsComponent,
+  FilterSortButtonsComponent
 } from './components/header/filter/filter-sort-buttons/filter-sort-buttons.component';
 import { FilterSortInputComponent } from './components/header/filter/filter-sort-input/filter-sort-input.component';
 import { FilterComponent } from './components/header/filter/filter.component';
@@ -14,7 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchInputBtnComponent } from './components/header/search-input-btn/search-input-btn.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { FilterService } from './services/filter.service';
-import { YoutubeService } from './services/youtube.service';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { YoutubeService } from './services/youtube.service';
     Page404Component,
   ],
   providers: [
-    YoutubeService,
+    SearchService,
     FilterService,
     LoginService,
     AuthGuard,

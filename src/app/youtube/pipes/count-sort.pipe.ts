@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchItem } from '@core/models/search-item.model';
+import { ISearchItem } from '@app/youtube/models/i-search-item.model';
 import { ASC, DESC } from '@shared/constans';
 
 @Pipe({
   name: 'countSort',
 })
 export class CountSortPipe implements PipeTransform {
-  transform(items: SearchItem[], sort: string = ''):SearchItem[] {
+  transform(items: ISearchItem[], sort: string = ''):ISearchItem[] {
     if (sort === ASC) {
       return items.sort((a, b) => ((Number.parseInt(a.statistics.viewCount, 10)
       > Number.parseInt(b.statistics.viewCount, 10))

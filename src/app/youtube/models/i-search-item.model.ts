@@ -1,4 +1,4 @@
-export interface SearchItem {
+export interface ISearchItem {
   kind: string,
   etag: string,
   id: string,

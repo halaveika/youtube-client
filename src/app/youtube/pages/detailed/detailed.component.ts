@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { YoutubeService } from '@app/core/services/youtube.service';
-import { SearchItem } from '@core/models/search-item.model';
+import { ISearchItem } from '@app/youtube/models/i-search-item.model';
+import { YoutubeHttpService } from '@youtube/services/youtube-http.service';
 
 @Component({
   selector: 'app-detailed',
@@ -9,7 +9,7 @@ import { SearchItem } from '@core/models/search-item.model';
   styleUrls: ['./detailed.component.scss'],
 })
 export class DetailedComponent implements OnInit {
-  private currentItem: SearchItem | null = null;
+  private currentItem: ISearchItem | null = null;
 
   private id = '';
 
@@ -29,12 +29,12 @@ export class DetailedComponent implements OnInit {
 
   public description = '';
 
-  constructor(private youtubeService: YoutubeService, private route: ActivatedRoute) {
+  constructor(private youtubeHttpService: YoutubeHttpService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((params:Params) => { this.id = params.id; return true; });
-    this.currentItem = this.youtubeService.getCurrentItem(this.id) as SearchItem;
+    this.currentItem = this.youtubeHttpService.getCurrentItem(this.id) as ISearchItem;
     this.viewCount = this.currentItem.statistics.viewCount;
     this.likeCount = this.currentItem.statistics.likeCount;
     this.dislikeCount = this.currentItem.statistics.dislikeCount;
