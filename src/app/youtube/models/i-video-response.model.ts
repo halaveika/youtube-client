@@ -1,4 +1,4 @@
-import { ISearchItem } from './i-search-item.model';
+import { ISearchItem } from './i-search-item';
 
 export interface IVideoResponse {
   kind: string,

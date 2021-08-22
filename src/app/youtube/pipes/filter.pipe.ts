@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISearchItem } from '@app/youtube/models/i-search-item.model';
+import { ISearchItem } from '@app/youtube/models/i-search-item';
 
 @Pipe({
   name: 'filter',

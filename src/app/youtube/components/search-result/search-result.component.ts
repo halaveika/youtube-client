@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ISearchItem } from '@app/youtube/models/i-search-item.model';
+import { ISearchItem } from '@app/youtube/models/i-search-item';
 import { FilterService } from '@core/services/filter.service';
 import { YoutubeHttpService } from '@youtube/services/youtube-http.service';
 

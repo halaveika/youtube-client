@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { URL_YOUTUBE_LIST, URL_YOUTUBE_VIDEO } from '@app/shared/constans';
-import { ISearchItem } from '@app/youtube/models/i-search-item.model';
+import { URL_SEARCH, URL_VIDEOS } from '@app/shared/constans';
+import { ISearchItem } from '@app/youtube/models/i-search-item';
 import { SearchService } from '@core/services/search.service';
 import { ISearchResponse } from '@youtube/models/i-search-response.model';
 import { IVideoResponse } from '@youtube/models/i-video-response.model';
@@ -36,7 +36,7 @@ export class YoutubeHttpService {
       .set('maxResults', '10')
       .set('type', 'video')
       .set('q', pattern);
-    return this.http.get<ISearchResponse>(URL_YOUTUBE_LIST, { params })
+    return this.http.get<ISearchResponse>(URL_SEARCH, { params })
       .pipe(
         map((searchResponse:ISearchResponse) => {
           const videoId:string = searchResponse.items.map((item) => item.id.videoId).join(',');
@@ -46,7 +46,7 @@ export class YoutubeHttpService {
           const params2 = new HttpParams()
             .set('id', videoId)
             .set('part', 'snippet,statistics');
-          return this.http.get<IVideoResponse>(URL_YOUTUBE_VIDEO, { params: params2 })
+          return this.http.get<IVideoResponse>(URL_VIDEOS, { params: params2 })
             .pipe(
               map((videoResponse:IVideoResponse) => videoResponse.items),
             );
@@ -58,10 +58,13 @@ export class YoutubeHttpService {
       );
   }
 
-  getCurrentItem(id:string):ISearchItem | null {
-    let currentItem:ISearchItem | null = null;
-    this.searchItemsData$
-      .subscribe((items) => { currentItem = items.find((item) => item.id === id) as ISearchItem; return true; });
-    return currentItem;
+  getCurrentItem(id:string):Observable<ISearchItem> {
+    const params = new HttpParams()
+      .set('id', id)
+      .set('part', 'snippet,statistics');
+    return this.http.get<IVideoResponse>(URL_VIDEOS, { params })
+      .pipe(
+        map((videoResponse:IVideoResponse):ISearchItem => videoResponse.items[0]),
+      );
   }
 }
