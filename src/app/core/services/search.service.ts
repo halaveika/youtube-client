@@ -3,7 +3,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class SearchService {
-
   private searchPattern = new BehaviorSubject<string>('');
 
   public searchPattern$: Observable<string>;
@@ -21,5 +20,4 @@ export class SearchService {
   setSearchPattern(pattern:string): void {
     this.searchPattern.next(pattern);
   }
-
 }

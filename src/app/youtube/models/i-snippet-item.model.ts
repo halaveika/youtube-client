@@ -1,7 +1,7 @@
 export interface ISnippetItem {
   kind: string,
   etag: string,
-  id: {id:string, videoId: string}
+  id: { id:string, videoId: string }
   snippet: Snippet,
 }
 

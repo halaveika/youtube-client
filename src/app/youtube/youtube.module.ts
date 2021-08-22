@@ -13,12 +13,11 @@ import { CountSortPipe } from './pipes/count-sort.pipe';
 import { DataSortPipe } from './pipes/data-sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 
-
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
   useClass: YoutubeInterceptor,
-  multi: true
-}
+  multi: true,
+};
 
 @NgModule({
   declarations: [
@@ -34,8 +33,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
   imports: [
     SharedModule,
     YoutubeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [INTERCEPTOR_PROVIDER,YoutubeHttpService],
+  providers: [INTERCEPTOR_PROVIDER, YoutubeHttpService],
 })
 export class YoutubeModule { }
