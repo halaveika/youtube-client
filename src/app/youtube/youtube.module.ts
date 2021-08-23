@@ -1,5 +1,5 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule, Provider } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { YoutubeHttpService } from '@youtube/services/youtube-http.service';
 import { YoutubeInterceptor } from '@youtube/youtube-interceptor';
@@ -12,12 +12,6 @@ import { MainComponent } from './pages/main/main.component';
 import { CountSortPipe } from './pipes/count-sort.pipe';
 import { DataSortPipe } from './pipes/data-sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-
-const INTERCEPTOR_PROVIDER: Provider = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: YoutubeInterceptor,
-  multi: true,
-};
 
 @NgModule({
   declarations: [
@@ -35,6 +29,10 @@ const INTERCEPTOR_PROVIDER: Provider = {
     YoutubeRoutingModule,
     HttpClientModule,
   ],
-  providers: [INTERCEPTOR_PROVIDER, YoutubeHttpService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: YoutubeInterceptor,
+    multi: true,
+  }, YoutubeHttpService],
 })
 export class YoutubeModule { }

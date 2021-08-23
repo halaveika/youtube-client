@@ -11,7 +11,7 @@ const routes: Routes = [
       .then((m) => m.YoutubeModule),
     canActivate: [AuthGuard],
   },
-  { path: '**', component: Page404Component },
+  { path: '**', component: Page404Component, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

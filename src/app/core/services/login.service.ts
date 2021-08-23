@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { TOKEN } from '@app/shared/constans';
+import { TOKEN } from '@app/shared/constansts';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()

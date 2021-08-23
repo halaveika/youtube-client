@@ -1,7 +1,6 @@
 <app-search-result-item
-  *ngFor="let item of searchItemsArr | filter:filterPattern  | dataSort:sortDataValue | countSort:sortCountValue "
-  [appStyleItemDate]="item.snippet.publishedAt" [viewCount]="item.statistics.viewCount"
-  [likeCount]="item.statistics.likeCount" [dislikeCount]="item.statistics.dislikeCount"
-  [commentCount]="item.statistics.commentCount" [title]="item.snippet.title"
-  [srcImg]="item.snippet.thumbnails.default.url" [id]="item.id">
+  *ngFor="let item of (searchItemsArr | async)! | filter: (filterPattern | async)! | dataSort: (sortDataValue | async)! | countSort: (sortCountValue | async)!"
+  [appStyleItemDate]="item.snippet.publishedAt" [commentCount]="item.statistics.commentCount"
+  [dislikeCount]="item.statistics.dislikeCount" [id]="item.id" [likeCount]="item.statistics.likeCount"
+  [srcImg]="item.snippet.thumbnails.default.url" [title]="item.snippet.title" [viewCount]="item.statistics.viewCount">
 </app-search-result-item>

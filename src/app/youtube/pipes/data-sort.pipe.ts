@@ -1,20 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ASC, DESC } from '@app/shared/constansts';
 import { ISearchItem } from '@app/youtube/models/i-search-item';
-import { ASC, DESC } from '@shared/constans';
 
 @Pipe({
   name: 'dataSort',
 })
 export class DataSortPipe implements PipeTransform {
-  transform(items: ISearchItem[], sort: string = ''):ISearchItem[] {
+  transform(items: ISearchItem[], sort: string = ''): ISearchItem[] {
+    const publishedAt = (item: ISearchItem) => Date.parse(item.snippet.publishedAt);
     if (sort === ASC) {
-      return items.sort((a, b) => ((Date.parse(a.snippet.publishedAt) > Date.parse(b.snippet.publishedAt))
-        ? 1 : (Date.parse(b.snippet.publishedAt) > Date.parse(a.snippet.publishedAt) ? -1 : 0)));
+      return items.sort((a, b) => publishedAt(a) > publishedAt(b) ? 1 : publishedAt(a) < publishedAt(b) ? -1 : 0);
+    } else if (sort === DESC) {
+      return items.sort((a, b) => publishedAt(a) > publishedAt(b) ? -1 : publishedAt(a) < publishedAt(b) ? 1 : 0);
+    } else {
+      return items;
     }
-    if (sort === DESC) {
-      return items.sort((a, b) => ((Date.parse(a.snippet.publishedAt) > Date.parse(b.snippet.publishedAt))
-        ? -1 : (Date.parse(b.snippet.publishedAt) > Date.parse(a.snippet.publishedAt) ? 1 : 0)));
-    }
-    return items;
   }
 }

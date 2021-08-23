@@ -1,22 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ASC, DESC } from '@app/shared/constansts';
 import { ISearchItem } from '@app/youtube/models/i-search-item';
-import { ASC, DESC } from '@shared/constans';
 
 @Pipe({
   name: 'countSort',
 })
 export class CountSortPipe implements PipeTransform {
-  transform(items: ISearchItem[], sort: string = ''):ISearchItem[] {
+  transform(items: ISearchItem[], sort: string = ''): ISearchItem[] {
+    const viewCount = (item: ISearchItem) => +item.statistics.viewCount;
     if (sort === ASC) {
-      return items.sort((a, b) => ((Number.parseInt(a.statistics.viewCount, 10)
-      > Number.parseInt(b.statistics.viewCount, 10))
-        ? 1 : (Number.parseInt(b.statistics.viewCount, 10) > Number.parseInt(a.statistics.viewCount, 10) ? -1 : 0)));
+      return items.sort((a, b) => viewCount(a) > viewCount(b) ? 1 : viewCount(a) < viewCount(b) ? -1 : 0);
+    } else if (sort === DESC) {
+      return items.sort((a, b) => viewCount(a) > viewCount(b) ? -1 : viewCount(a) < viewCount(b) ? 1 : 0);
+    } else {
+      return items;
     }
-    if (sort === DESC) {
-      return items.sort((a, b) => ((Number.parseInt(a.statistics.viewCount, 10)
-      > Number.parseInt(b.statistics.viewCount, 10))
-        ? -1 : (Number.parseInt(b.statistics.viewCount, 10) > Number.parseInt(a.statistics.viewCount, 10) ? 1 : 0)));
-    }
-    return items;
   }
 }
+

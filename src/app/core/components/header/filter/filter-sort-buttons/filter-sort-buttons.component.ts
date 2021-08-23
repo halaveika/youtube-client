@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FilterService } from '@core/services/filter.service';
-import { ASC, DESC } from '@shared/constans';
+import { ASC, DESC } from '@app/shared/constansts';
 
 @Component({
   selector: 'app-filter-sort-buttons',
