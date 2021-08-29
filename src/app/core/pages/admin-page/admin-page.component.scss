@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.admin-container {
+  width: 440px;
+  height: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex-direction: column;
+  background: #F2F2F2;
+  padding: 20px;
+}
+
+.mat-raised-button{
+  background-color: #2F80ED;
+}
