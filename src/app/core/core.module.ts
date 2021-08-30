@@ -4,7 +4,7 @@ import { AuthGuard } from '@core/auth-guard';
 import { LoginService } from '@core/services/login.service';
 import { SharedModule } from '@shared/shared.module';
 import {
-  FilterSortButtonsComponent
+  FilterSortButtonsComponent,
 } from './components/header/filter/filter-sort-buttons/filter-sort-buttons.component';
 import { FilterSortInputComponent } from './components/header/filter/filter-sort-input/filter-sort-input.component';
 import { FilterComponent } from './components/header/filter/filter.component';
@@ -33,12 +33,12 @@ import { SearchService } from './services/search.service';
   ],
   imports: [
     SharedModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,
     Page404Component,
-    AdminPageComponent
+    AdminPageComponent,
   ],
   providers: [
     SearchService,

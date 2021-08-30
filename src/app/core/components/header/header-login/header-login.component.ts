@@ -7,7 +7,7 @@ import { LoginService } from '@core/services/login.service';
   styleUrls: ['./header-login.component.scss'],
 })
 export class HeaderLoginComponent implements OnInit {
-  public userTitle = 'Your Name';
+  public userName = '';
 
   public isLogin = false;
 
@@ -16,9 +16,11 @@ export class HeaderLoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginService.isLogin$.subscribe((islogin) => { this.isLogin = islogin; return true; });
+    this.loginService.user$.subscribe((name) => { this.userName = name; return true; });
   }
 
   logout() {
     this.loginService.logout();
+    this.userName = '';
   }
 }

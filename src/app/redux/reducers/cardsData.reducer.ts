@@ -3,13 +3,19 @@ import { ICardsState, initialCardsState } from '../state/cardsData.state';
 
 export const cardsDataReducer = (
   state = initialCardsState,
-  action: CardsDataActions
+  action: CardsDataActions,
 ): ICardsState => {
   switch (action.type) {
     case ECardsDataActions.SetCardData: {
       return {
         ...state,
-        cardsData: state.cardsData.concat([action.payload])
+        cardsData: state.cardsData.concat([action.payload]),
+      };
+    }
+    case ECardsDataActions.SelectCard: {
+      return {
+        ...state,
+        index: action.payload,
       };
     }
     default:

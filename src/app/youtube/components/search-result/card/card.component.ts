@@ -1,20 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { SelectCard } from '@redux/actions/cardsData.actions';
+import { IAppState } from '@redux/state/app.state';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() public title = '';
-  @Input() public description = '';
+
   @Input() public img = '';
-  @Input() public linkVideo = '';
-  @Input() public creatingDate: Date | null = null;
+
   @Input() public id = 0;
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private store: Store<IAppState>, private router: Router) { }
+
+  toCardDetailed(): void {
+    this.store.dispatch(new SelectCard(this.id));
+    this.router.navigate(['main/card']);
   }
-
 }

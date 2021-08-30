@@ -11,16 +11,22 @@ export class LoginService {
 
   private isLogin = new BehaviorSubject(false);
 
+  private user = new BehaviorSubject('');
+
   public isLogin$: Observable<boolean>;
+
+  public user$: Observable<string>;
 
   constructor(private router: Router) {
     this.isLogin$ = this.isLogin.asObservable();
+    this.user$ = this.user.asObservable();
   }
 
   login(login: string, password:string) {
     this.loginValue = login;
     this.passwordValue = password;
     this.isLogin.next(true);
+    this.user.next(this.loginValue);
     localStorage.setItem(TOKEN, this.generateFakeToken());
     this.router.navigate(['main']);
   }

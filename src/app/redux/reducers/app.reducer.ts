@@ -7,6 +7,5 @@ import { searchDataReducer } from './searchData.reducer';
 export const appReducer: ActionReducerMap<IAppState, any> = {
   cards: cardsDataReducer,
   searchData: searchDataReducer,
-  router: routerReducer
+  router: routerReducer,
 };
-

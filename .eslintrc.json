@@ -22,6 +22,7 @@
       "rules": {
         "max-len": ["error", { "code": 120 }],
         "import/prefer-default-export":"off",
+        "max-classes-per-file":"off",
         "no-nested-ternary":"off",
         "class-methods-use-this": "off",
         "no-else-return": "off",

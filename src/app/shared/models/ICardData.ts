@@ -1,4 +1,3 @@
-
 export interface ICardData {
   title: string;
   img: string;

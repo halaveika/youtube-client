@@ -3,13 +3,13 @@ import { initialSearchDataState, ISearchDataState } from '../state/searchData.st
 
 export const searchDataReducer = (
   state = initialSearchDataState,
-  action: SearchDataActions
+  action: SearchDataActions,
 ): ISearchDataState => {
   switch (action.type) {
     case ESearchDataActions.SetSearchData: {
       return {
         ...state,
-        searchData: action.payload
+        searchData: action.payload,
       };
     }
     default:

@@ -2,7 +2,6 @@ import { RouterReducerState } from '@ngrx/router-store';
 import { ICardsState, initialCardsState } from './cardsData.state';
 import { initialSearchDataState, ISearchDataState } from './searchData.state';
 
-
 export interface IAppState {
   router?: RouterReducerState;
   cards: ICardsState;
@@ -11,7 +10,7 @@ export interface IAppState {
 
 export const initialAppState: IAppState = {
   cards: initialCardsState,
-  searchData: initialSearchDataState
+  searchData: initialSearchDataState,
 };
 
 export function getInitialState(): IAppState {

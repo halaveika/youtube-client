@@ -4,8 +4,6 @@
     <mat-card-title>{{title}}</mat-card-title>
   </mat-card-header>
   <mat-card-actions>
-    <a [routerLink]="['/main/video',id]">
-      <button mat-button>more...</button>
-    </a>
+    <button mat-button (click)="toCardDetailed()">more...</button>
   </mat-card-actions>
 </mat-card>

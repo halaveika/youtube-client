@@ -9,13 +9,21 @@ import { YoutubeHttpService } from '@youtube/services/youtube-http.service';
 })
 export class DetailedComponent implements OnInit {
   private id = '';
+
   public viewCount = '';
+
   public likeCount = '';
+
   public dislikeCount = '';
+
   public commentCount = '';
+
   public title = '';
+
   public srcImg = '';
+
   public itemPublishDate = '';
+
   public description = '';
 
   constructor(private youtubeHttpService: YoutubeHttpService, private route: ActivatedRoute) {
@@ -26,7 +34,7 @@ export class DetailedComponent implements OnInit {
       this.id = params.id;
       return true;
     });
-    this.youtubeHttpService.getCurrentItem(this.id).subscribe(item => {
+    this.youtubeHttpService.getCurrentItem(this.id).subscribe((item) => {
       this.viewCount = item.statistics.viewCount;
       this.likeCount = item.statistics.likeCount;
       this.dislikeCount = item.statistics.dislikeCount;

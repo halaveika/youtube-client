@@ -1,0 +1,14 @@
+<div class="detailed-card-container">
+  <a [routerLink]="['/main']"><button mat-raised-button color="primary"><img src="../../../../assets/arrow.png"
+        alt="back"></button></a>
+  <img [src]="(cardData$ | async)!.img" alt="image" class="card-img">
+  <div class="detailed-summary">
+    <div class="detailed-top">
+      <h1>{{(cardData$ | async)!.title}}</h1>
+      <h2>{{(cardData$ | async)!.creatingDate}}</h2>
+    </div>
+    <h3>Description</h3>
+    <p class="detailed-description">{{(cardData$ | async)!.description}}</p>
+    <a [href]="(cardData$ | async)!.linkVideo" target="_blank">{{(cardData$ | async)!.linkVideo}}</a>
+  </div>
+</div>

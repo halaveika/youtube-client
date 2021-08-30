@@ -1,10 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SetSearchData } from '@app/redux/actions/searchData.actions';
 import { URL_SEARCH, URL_VIDEOS } from '@app/shared/constansts';
-import { ISearchItem } from '@app/youtube/models/i-search-item';
 import { SearchService } from '@core/services/search.service';
-import { ISearchResponse } from '@youtube/models/i-search-response.model';
-import { IVideoResponse } from '@youtube/models/i-video-response.model';
+import { Store } from '@ngrx/store';
+import { ISearchItem } from '@shared/models/i-search-item';
+import { ISearchResponse } from '@shared/models/i-search-response.model';
+import { IVideoResponse } from '@shared/models/i-video-response.model';
 import {
   BehaviorSubject, Observable, of, throwError,
 } from 'rxjs';
@@ -22,7 +24,7 @@ export class YoutubeHttpService {
 
   public searchItemsData$: Observable<ISearchItem[]>;
 
-  constructor(private searchService:SearchService, private http: HttpClient) {
+  constructor(private searchService:SearchService, private http: HttpClient, private store: Store) {
     this.searchItemsData$ = this.searchItemsData.asObservable();
     this.searchPattern$ = this.searchPattern.asObservable();
     this.searchService.searchPattern$.pipe(tap((pattern) => this.searchPattern.next(pattern))).subscribe();
@@ -43,6 +45,7 @@ export class YoutubeHttpService {
     return this.http.get<ISearchResponse>(URL_SEARCH, { params }).pipe(
       map((searchResponse: ISearchResponse) => searchResponse.items.map((item) => item.id.videoId).join(',')),
       mergeMap((videoId: string) => this.getYoutubeVideos(videoId)),
+      tap((response) => this.store.dispatch(new SetSearchData(response))),
       catchError((error) => {
         throwError(error);
         return [];

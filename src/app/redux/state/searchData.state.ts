@@ -1,9 +1,9 @@
-import { IVideoData } from '@shared/models/IVideoData';
+import { ISearchItem } from '@shared/models/i-search-item';
 
 export interface ISearchDataState {
-  searchData: IVideoData[];
+  searchData: ISearchItem [];
 }
 
-export const initialSearchDataState: ISearchDataState  = {
-  searchData: []
+export const initialSearchDataState: ISearchDataState = {
+  searchData: [],
 };
