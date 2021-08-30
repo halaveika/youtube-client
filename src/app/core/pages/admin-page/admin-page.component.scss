@@ -16,6 +16,13 @@
   padding: 20px;
 }
 
+.container-btn{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .mat-raised-button{
   background-color: #2F80ED;
 }

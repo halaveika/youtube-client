@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SetCardData } from '@app/redux/actions/cardsData.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-admin-page',
@@ -11,12 +13,12 @@ export class AdminPageComponent {
   public img = '';
   public linkVideo = '';
 
-  constructor() { }
+  constructor(private _store: Store) { }
 
   creatCard() {
     if (this.title.trim() && this.description.trim() && this.img.trim() && this.linkVideo.trim()) {
-      // this.loginService.login(this.loginValue, this.passwordValue);
+      const creatingDate = new Date();
+      this._store.dispatch(new SetCardData({ title: this.title, description: this.description, img: this.img, linkVideo: this.linkVideo, creatingDate }));
     }
   }
-
 }

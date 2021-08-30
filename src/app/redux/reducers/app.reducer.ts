@@ -9,3 +9,4 @@ export const appReducer: ActionReducerMap<IAppState, any> = {
   searchData: searchDataReducer,
   router: routerReducer
 };
+

@@ -9,7 +9,7 @@ export const cardsDataReducer = (
     case ECardsDataActions.SetCardData: {
       return {
         ...state,
-        cardsData: action.payload
+        cardsData: state.cardsData.concat([action.payload])
       };
     }
     default:

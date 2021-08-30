@@ -12,6 +12,7 @@ import { MainComponent } from './pages/main/main.component';
 import { CountSortPipe } from './pipes/count-sort.pipe';
 import { DataSortPipe } from './pipes/data-sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CardComponent } from './components/search-result/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     CountSortPipe,
     FilterPipe,
     MainComponent,
-    DetailedComponent],
+    DetailedComponent,
+    CardComponent],
   exports: [],
   imports: [
     SharedModule,

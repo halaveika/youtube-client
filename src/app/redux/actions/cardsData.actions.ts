@@ -10,7 +10,7 @@ export enum ECardsDataActions {
 
 export class SetCardData implements Action {
   public readonly type = ECardsDataActions.SetCardData;
-  constructor(public payload: ICardData[]) {}
+  constructor(public payload: ICardData) {}
 }
 
 export type CardsDataActions = SetCardData;

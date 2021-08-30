@@ -16,6 +16,8 @@
     <mat-label>Link video</mat-label>
     <input matInput [(ngModel)]="linkVideo">
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="creatCard">Creat card</button>
+  <div class="container-btn">
+    <a [routerLink]="['/main']"><button mat-stroked-button color="warn">Cancele</button></a>
+    <button mat-raised-button color="primary" (click)="creatCard()">Creat card</button>
+  </div>
 </div>
-

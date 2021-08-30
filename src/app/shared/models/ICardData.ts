@@ -1,8 +1,8 @@
-import { IVideoData } from "./IVideoData";
 
 export interface ICardData {
-  videoData: IVideoData;
+  title: string;
+  img: string;
   description: string;
-  videoLink: string;
+  linkVideo: string;
   creatingDate: Date;
 }
