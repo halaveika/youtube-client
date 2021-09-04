@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  <img class="card-img" [src]="srcImg" alt="img">
+  <div class="stat-container">
+    <div class="stat-item">
+      <img src="../../../assets/viewed.png">
+      {{viewCount}}
+    </div>
+    <div class="stat-item">
+      <img src="../../../assets/liked.png">
+      {{likeCount}}
+    </div>
+    <div class="stat-item">
+      <img src="../../../assets/dislike.png">
+      {{dislikeCount}}
+    </div>
+    <div class="stat-item">
+      <img src="../../../assets/Group 9.png">
+      {{commentCount}}
+    </div>
+  </div>
+  <mat-card-header>
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <a [routerLink]="['/main/video',id]">
+      <button mat-button>more...</button>
+    </a>
+  </mat-card-actions>
+</mat-card>

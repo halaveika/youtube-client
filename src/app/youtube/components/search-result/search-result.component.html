@@ -1,0 +1,8 @@
+<app-card *ngFor="let card of (cardDataArr$ | async)!;index as id" [id]="id" [title]="card.title" [img]="card.img">
+</app-card>
+<app-search-result-item
+  *ngFor="let item of (searchItemsArr | async)! | filter: (filterPattern | async)! | dataSort: (sortDataValue | async)! | countSort: (sortCountValue | async)!"
+  [appStyleItemDate]="item.snippet.publishedAt" [commentCount]="item.statistics.commentCount"
+  [dislikeCount]="item.statistics.dislikeCount" [id]="item.id" [likeCount]="item.statistics.likeCount"
+  [srcImg]="item.snippet.thumbnails.default.url" [title]="item.snippet.title" [viewCount]="item.statistics.viewCount">
+</app-search-result-item>

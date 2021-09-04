@@ -1,0 +1,31 @@
+:host {
+  margin-left: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-title {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #4F4F4F;
+}
+
+.login-img {
+  margin-left: 5px;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.mat-flat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: auto;
+  height: 19px;
+  background-color: #2F80ED;
+}

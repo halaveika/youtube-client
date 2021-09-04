@@ -1,0 +1,4 @@
+<span class="user-title">{{userName}}</span>
+<img class="login-img" src="../../../assets/Subtract.png" alt="login">
+<button mat-flat-button color="primary" (click)="logout()" *ngIf="isLogin">logout</button>
+<button mat-flat-button color="primary" *ngIf="!isLogin">login</button>

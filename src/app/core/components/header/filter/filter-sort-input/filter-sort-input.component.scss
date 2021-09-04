@@ -1,0 +1,24 @@
+:host{
+  display: flex;
+  flex-direction: row;
+}
+
+.input-title {
+  margin: 0 10px 0 10px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #2F80ED;
+}
+
+.mat-input-element {
+  width:149px;
+  height:13px;
+  background-color:#FFFFFF;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 10px;
+  display: flex;
+  align-items: center;
+  color: #929292;
+}

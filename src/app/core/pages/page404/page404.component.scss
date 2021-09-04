@@ -1,0 +1,26 @@
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+
+.page404-message {
+  display: flex;
+  flex: wrap;
+  flex-direction: row;
+}
+
+.page404-message img {
+  margin-right: 20px;
+}
+
+.page404-message h2 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #828282;
+}
